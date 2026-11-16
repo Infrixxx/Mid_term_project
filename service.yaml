@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: travel-insurance-prediction-service
+  labels:
+    app: travel-insurance-prediction
+spec:
+  type: LoadBalancer
+  selector:
+    app: travel-insurance-prediction
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 9696
+    name: http
